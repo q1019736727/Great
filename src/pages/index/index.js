@@ -4,6 +4,7 @@ import './index.css'
 import Vue from 'vue'
 import router from './router/index'
 import tabbar from 'components/Tabbar.vue'
+import swiper from 'components/Swiper.vue'
 import axios from 'axios'
 import api from 'js/api.js'
 import { InfiniteScroll } from 'mint-ui';
@@ -19,21 +20,23 @@ let app = new Vue({
     goodsList:[],
     loading:false,
     pageNum:1,
-    loadAll:false
+    loadAll:false,
+    bannerlist:[]
   },
   components:{
     tabbar,
+    swiper
   },
   created(){
     this.loadMore()
+    this.getbanner()
   },
   methods:{
     loadMore(){
       if (this.loadAll === true){
         return
       }
-      console.log(1111)
-      this.loading = false
+      this.loading = true
       this.$http.get(api.hotLists,{
         pageSize:8,
         pageNum:this.pageNum
@@ -47,10 +50,14 @@ let app = new Vue({
         }else{
           this.goodsList = this.goodsList.concat(res.data.lists)
         }
-        console.log(this.goodsList)
       }).catch((e)=>{
         this.loading = false
         console.log(e)
+      })
+    },
+    getbanner(){
+      this.$http.get(api.banner).then((res)=>{
+        this.bannerlist = res.data.lists
       })
     }
   }

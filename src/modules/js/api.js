@@ -1,6 +1,14 @@
 
 const api = {
-    hotLists:'/index/hotLists',
+  hotLists:'/index/hotLists',
+  banner:'/index/bannerLists',//首页轮播图
+  kinds:'/category/kinds',//分类页对应cid
+  items:'/category/items',//分类页品牌
+  searchHotItems:'/search/hotItems',//搜索热门品牌
+  goodsDetail:'/goods/details',//商品详情页
+  goodsDeal:'/goods/deal',//本店成交
+  cartLists:'/cart/lists',//购物车页
+  mylists:'/address/mylists',//我的地址列表
 }
 
 // const host = 'http://rap2api.taobao.org/app/mock/7058'

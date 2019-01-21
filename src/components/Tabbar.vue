@@ -3,7 +3,7 @@
     <ul>
       <li class="active"><a href="javascript:void(0)"><i class="icon-home"></i><div>有赞</div></a></li>
       <li><a href="javascript:void(0)"><i class="icon-category"></i><div>分类</div></a></li>
-      <li><a href="javascript:void(0)"><i class="icon-cart"></i><div>购物车</div></a></li>
+      <li><a href="./cart.html"><i class="icon-cart"></i><div>购物车</div></a></li>
       <li><a href="javascript:void(0)"><i class="icon-user"></i><div>我</div></a></li>
     </ul>
   </div>
@@ -11,7 +11,7 @@
 
 <script>
     export default {
-        name: "Tabbar"
+      name: "Tabbar",
     }
 </script>
 
