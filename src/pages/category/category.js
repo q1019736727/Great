@@ -22,7 +22,8 @@ let category = new Vue({
       currentIndex:0,
       subList:[],
       hotbrand:[],
-      hotCategory:[]
+      hotCategory:[],
+      val:''
     }
   },
   created(){
@@ -46,6 +47,9 @@ let category = new Vue({
     clickSublist(index,cid){
       this.currentIndex = index
       this.getkindstoList(cid)
+    },
+    gotoSearch(val){
+      open(`search.html?id=${val}`,'_self')
     }
   }
 

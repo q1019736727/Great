@@ -1,9 +1,3 @@
-import Vue from 'vue'
-
-
-
-let cart = new Vue({
-  el:'#cart',
-  created(){
-  }
-})
+import './cart_base.css'
+import './cart_trade.css'
+import './cart.css'
