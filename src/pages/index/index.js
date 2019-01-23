@@ -2,6 +2,8 @@
 import 'css/common.css'
 import './index.css'
 import Vue from 'vue'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
 import router from './router/index'
 import tabbar from 'components/Tabbar.vue'
 import swiper from 'components/Swiper.vue'
@@ -9,14 +11,16 @@ import axios from 'axios'
 import api from 'js/api.js'
 import { InfiniteScroll } from 'mint-ui';
 
+Vue.use(VueAwesomeSwiper, /* { default global options } */)
 Vue.use(InfiniteScroll);
 Vue.prototype.$http = axios
 Vue.config.productionTip = false
 
 let app = new Vue({
   el: '#app',
-  router,
+  // router,
   data:{
+    selectTabbar:1,
     goodsList:[],
     loading:false,
     pageNum:1,
@@ -42,6 +46,7 @@ let app = new Vue({
         pageNum:this.pageNum
       }).then((res)=>{
         this.loading = false
+        this.pageNum += 1
         if (res.data.lists.length<8) {
           this.loadAll = true
         }

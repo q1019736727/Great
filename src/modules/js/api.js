@@ -9,6 +9,26 @@ const api = {
   goodsDeal:'/goods/deal',//本店成交
   cartLists:'/cart/lists',//购物车页
   mylists:'/address/mylists',//我的地址列表
+
+  // hotLists: '/index/hotLists',
+  // banner: '/index/banner',
+  // topList: '/category/topList',
+  // subList: '/category/subList',
+  // rank: '/category/rank',
+  // searchList: '/search/list',
+  // details: '/goods/details',
+  // deal: '/goods/deal',
+  // cartAdd: '/cart/add',
+  // cartRemove: '/cart/remove',
+  // cartMremove: '/cart/mremove',
+  // cartReduce: '/cart/reduce',
+  // cartLists: '/cart/list',
+  // cartUpdate: '/cart/update',
+  // addressLists: '/address/list',
+  // addressAdd: '/address/add',
+  // addressRemove: '/address/remove',
+  // addressUpdate: '/address/update',
+  // addressSetDefault: '/address/setDefault'
 }
 
 // const host = 'http://rap2api.taobao.org/app/mock/7058'

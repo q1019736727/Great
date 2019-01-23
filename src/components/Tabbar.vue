@@ -1,10 +1,10 @@
 <template>
   <div class="bottom-nav">
     <ul>
-      <li class="active"><a href="javascript:void(0)"><i class="icon-home"></i><div>有赞</div></a></li>
-      <li><a href="javascript:void(0)"><i class="icon-category"></i><div>分类</div></a></li>
-      <li><a href="./cart.html"><i class="icon-cart"></i><div>购物车</div></a></li>
-      <li><a href="javascript:void(0)"><i class="icon-user"></i><div>我</div></a></li>
+      <li :class="{active: itemIndex===0}"><a href="index.html"><i class="icon-home"></i><div>有赞</div></a></li>
+      <li :class="{active: itemIndex===1}"><a href="category.html"><i class="icon-category"></i><div>分类</div></a></li>
+      <li :class="{active: itemIndex===2}"><a href="cart.html"><i class="icon-cart"></i><div>购物车</div></a></li>
+      <li :class="{active: itemIndex===3}"><a href="javascript:void(0)"><i class="icon-user"></i><div>我</div></a></li>
     </ul>
   </div>
 </template>
@@ -12,6 +12,15 @@
 <script>
     export default {
       name: "Tabbar",
+      props:['itemIndex'],
+      data(){
+        return{
+
+        }
+      },
+      mounted(){
+        console.log(this.itemIndex)
+      }
     }
 </script>
 
@@ -22,7 +31,7 @@
     height: 50px;
     bottom: 0;
     background-color: #fff;
-    z-index: 8;
+    /*z-index: 8;*/
     -o-border-image: url(https://b.yzcdn.cn/v2/image/wap/border-line-2.png) 2 stretch;
     border-image: url(https://b.yzcdn.cn/v2/image/wap/border-line-2.png) 2 stretch;
     border-top: 2px solid #e5e5e5

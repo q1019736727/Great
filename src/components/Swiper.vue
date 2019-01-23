@@ -1,46 +1,57 @@
 <template>
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide" v-for="list in lists">
-        <a class="js-no-follow" href="javascript:void(0)">
-          <img class="goods-main-photo fadeIn" :src="list.img">
-        </a>
-      </div>
-    </div>
-    <div class="swiper-pagination"></div>
-  </div>
+  <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
+    <swiper-slide class="img-wrapper"  v-for="item in lists" :key="item.img">
+      <img :src="item.img" alt="">
+    </swiper-slide>
+    <div class="swiper-pagination"  slot="pagination"></div>
+  </swiper>
 </template>
 
 <script>
-  import Swiper from 'swiper'
   import 'swiper/dist/css/swiper.css'
+  import { swiper, swiperSlide } from 'vue-awesome-swiper'
     export default {
       name: "Swiper",
+      components: {
+        swiper,
+        swiperSlide
+      },
       props:{
         lists:{
           required:true
         }
       },
+      data(){
+        return{
+          swiperOption: {
+            autoplay: {
+              delay: 3000,
+              stopOnLastSlide: false,
+              disableOnInteraction: false,
+            },
+            loop : true,
+            pagination: {
+              el: '.swiper-pagination'
+            }
+          },
+        }
+      },
       mounted(){
-        var mySwiper = new Swiper('.swiper-container',{
-          loop: true,
-          autoplay: {
-            delay: 3000,
-          },
-          pagination: {
-            el: '.swiper-pagination',
-            type: 'bullets',
-          },
-        })
+
+      },
+      methods:{
+        callback(index){
+          console.log(index)
+        }
       }
     }
 </script>
 
 <style lang="scss" scoped>
-.swiper-container{
-  img{
-    width: 100%;
-    height: 100%;
+  .img-wrapper{
+    img{
+      width: 100%;
+      height: 100%;
+    }
   }
-}
 </style>
