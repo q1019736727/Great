@@ -49,7 +49,7 @@ let category = new Vue({
       this.getkindstoList(cid)
     },
     gotoSearch(val){
-      open(`search.html?id=${val}`,'_self')
+      open(`search.html?keyword=${val}`,'_self')
     }
   }
 
