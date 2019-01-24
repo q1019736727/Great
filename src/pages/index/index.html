@@ -68,7 +68,7 @@
               infinite-scroll-distance="10">
             <li v-for="goods in goodsList">
               <div class="goods-item">
-                <a href="javascript:void(0)">
+                <a :href="'goods.html?id='+goods.id">
                   <div class="thumb img-box">
                     <img class="fadeIn" :src="goods.img">
                   </div>
