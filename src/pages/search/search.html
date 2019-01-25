@@ -52,7 +52,7 @@
       <div class="search-wrap js-waterfull-wrap">
         <ul class="js-list" @mousewheel="scroller">
           <li class="goods-item" v-for="list in lists" :key="list.title">
-            <a href="javascript:">
+            <a :href="'goods.html?id='+list.id">
               <div class="thumb">
                 <img :src="list.img">
                 <i class="sell-out" v-show="list.sellOut"></i>

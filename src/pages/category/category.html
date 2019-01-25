@@ -213,10 +213,12 @@
             <h3 class="category-title">热门品牌 </h3>
             <ul class="category-content">
               <li v-for="list in hotbrand" class="category-item js-category-item" data-item-id="85" data-item-name="良品铺子">
-                <img :src="list.img" alt="良品铺子" class="category-img">
-                <span class="category-item-name">
+                <a :href="'goods.html?id='+goods.id">
+                  <img :src="list.img" alt="良品铺子" class="category-img">
+                  <span class="category-item-name">
                   {{list.name}}
                 </span>
+                </a>
               </li>
 
             </ul>
