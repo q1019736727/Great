@@ -23,6 +23,6 @@
 </script>
 
 <style scoped>
- @import "./address_base.css";
+  @import "./address_base.css";
   @import "./adress.css";
 </style>
