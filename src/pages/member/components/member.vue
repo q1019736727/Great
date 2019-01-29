@@ -38,7 +38,7 @@
           </li>
         </ul>
         <div class="block block-list list-vertical">
-          <router-link class="block-item link clearfix ico-order" to="/adress" target="_self">
+          <router-link class="block-item link clearfix ico-order" :to="{name:'addressList',query:{typeOne:'数据11',typeTwo:'数据222'}}" target="_self">
             <p class="title-info c-black font-size-14">收货地址</p>
           </router-link>
         </div>
