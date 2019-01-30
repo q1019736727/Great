@@ -19,9 +19,14 @@
 </template>
 
 <script>
+  import bus from 'js/bus.js'
   export default {
     created(){
       console.log(this.$route)
+      setTimeout(()=>{
+        bus.$emit('change',666)
+        this.$store.dispatch('changeAction','我要改变')
+      },3000)
     },
     methods:{
       goEdit(){
