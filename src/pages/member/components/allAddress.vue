@@ -21,6 +21,11 @@
 <script>
   import bus from 'js/bus.js'
   export default {
+    data(){
+      return{
+        adressList:this.$store.state.list//测试一下
+      }
+    },
     created(){
       console.log(this.$route)
       setTimeout(()=>{
